@@ -53,7 +53,10 @@ const FourteenDaysScreen = () => {
     <View style={styles.container}>
       <LoadingErrorComponent isLoading={isLoading} error={error}>
         {forecastData && (
-          <ScrollView style={styles.scrollView}>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            style={styles.scrollView}>
             {forecastData.map((day, index) => (
               <View key={index}>
                 <TouchableWithoutFeedback onPress={() => handleExpand(index)}>

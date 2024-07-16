@@ -8,7 +8,7 @@ import { es } from "date-fns/locale";
 
 import LoadingErrorComponent from "../components/LoadingErrorComponent";
 import { capitalizeFirstLetter } from "../utils.js";
-import { todayScreenStyles as styles } from "../styles.js";
+import { todayScreenStyles as styles, commonStyles } from "../styles.js";
 
 const TodayScreen = () => {
   const location = "London";
@@ -29,15 +29,15 @@ const TodayScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={commonStyles.container}>
       <LoadingErrorComponent isLoading={isLoading} error={error}>
         {weatherData && (
           <View>
-            <View style={styles.infoPrimaryContainer}>
+            <View style={commonStyles.infoPrimaryContainer}>
               <View>
                 {isValid(formatDate(weatherData?.location?.localtime)) ? (
                   <>
-                    <Text style={styles.infoPrimaryDate}>
+                    <Text style={commonStyles.infoPrimaryDate}>
                       {"Hoy, "}
                       {capitalizeFirstLetter(
                         format(
@@ -59,27 +59,29 @@ const TodayScreen = () => {
                         weatherData?.location?.localtime?.substring(11, 16)
                       )}
                     </Text>
-                    <Text style={styles.infoPrimaryText}>
+                    <Text style={commonStyles.infoPrimaryText}>
                       {getValue(weatherData?.location?.name)},{" "}
                       {getValue(weatherData?.location?.country)}
                     </Text>
-                    <Text style={styles.infoPrimaryText}>
+                    <Text style={commonStyles.infoPrimaryText}>
                       {getValue(weatherData?.current?.condition?.text)}
                     </Text>
                     {forecastData && forecastData.length > 0 && (
-                      <Text style={styles.infoPrimaryText}>
+                      <Text style={commonStyles.infoPrimaryText}>
                         Máx {getValue(forecastData[0]?.day?.maxtemp_c)}°C - Min{" "}
                         {getValue(forecastData[0]?.day?.mintemp_c)}°C
                       </Text>
                     )}
                   </>
                 ) : (
-                  <Text style={styles.infoPrimaryDate}>Fecha inválida</Text>
+                  <Text style={commonStyles.infoPrimaryDate}>
+                    Fecha inválida
+                  </Text>
                 )}
               </View>
               <View>
                 <Image
-                  style={styles.infoPrimaryIcon}
+                  style={commonStyles.infoPrimaryIcon}
                   source={{
                     uri: `https:${getValue(
                       weatherData?.current?.condition?.icon,

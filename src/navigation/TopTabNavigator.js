@@ -4,6 +4,8 @@ import TodayScreen from "../screens/TodayScreen";
 import TomorrowScreen from "../screens/TomorrowScreen";
 import FourteenDaysScreen from "../screens/FourteenDaysScreen";
 
+import { colors, fonts } from "../styles.js";
+
 const Tab = createMaterialTopTabNavigator();
 
 const TopTabNavigator = () => {
@@ -12,16 +14,21 @@ const TopTabNavigator = () => {
       initialRouteName="TodayScreen"
       screenOptions={{
         tabBarLabelStyle: {
-          fontWeight: "bold",
-          fontSize: 16,
+          fontWeight: fonts.weights.bold,
+          fontSize: fonts.size.medium,
         },
         tabBarStyle: {
-          backgroundColor: "#333333",
+          shadowColor: colors.primaryBackground,
+          borderColor: colors.primaryBackground,
+          borderWidth: 1,
+          borderBottomWidth: 0,
+          backgroundColor: colors.primaryBackground,
         },
-        tabBarActiveTintColor: "#ffffff",
-        tabBarInactiveTintColor: "#aaaaaa",
+        tabBarActiveTintColor: colors.primaryColor,
+        tabBarInactiveTintColor: colors.secondaryColor,
         tabBarIndicatorStyle: {
-          backgroundColor: "#ffffff",
+          backgroundColor: colors.primaryColor,
+          height: 1,
         },
       }}>
       <Tab.Screen name="Hoy" component={TodayScreen} />

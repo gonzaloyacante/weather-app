@@ -7,7 +7,7 @@ import useFetchWeatherForecast from "../hooks/useFetchWeatherForecast";
 
 import LoadingErrorComponent from "../components/LoadingErrorComponent";
 import { capitalizeFirstLetter } from "../utils.js";
-import { tomorrowScreenStyles as styles } from "../styles.js";
+import { tomorrowScreenStyles as styles, commonStyles } from "../styles.js";
 
 const TomorrowScreen = () => {
   const location = "London";
@@ -31,26 +31,26 @@ const TomorrowScreen = () => {
   const day = forecastData && forecastData.length > 1 ? forecastData[1] : null;
 
   return (
-    <View style={styles.container}>
+    <View style={commonStyles.container}>
       <LoadingErrorComponent isLoading={isLoading} error={error}>
         {day && (
           <View>
-            <View style={styles.infoPrimaryContainer}>
+            <View style={commonStyles.infoPrimaryContainer}>
               <View>
-                <Text style={styles.infoPrimaryDate}>
+                <Text style={commonStyles.infoPrimaryDate}>
                   {"Mañana, "}
                   {capitalizeFirstLetter(formatDate(day.date))}
                 </Text>
-                <Text style={styles.infoPrimaryText}>
+                <Text style={commonStyles.infoPrimaryText}>
                   {getValue(day?.day?.condition?.text)}
                 </Text>
-                <Text style={styles.infoPrimaryText}>
+                <Text style={commonStyles.infoPrimaryText}>
                   Máx {getValue(day?.day?.maxtemp_c)}°C - Min{" "}
                   {getValue(day?.day?.mintemp_c)}°C
                 </Text>
               </View>
               <Image
-                style={styles.infoPrimaryIcon}
+                style={commonStyles.infoPrimaryIcon}
                 source={{
                   uri: `https:${getValue(day?.day?.condition?.icon, "")}`,
                 }}
