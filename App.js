@@ -1,23 +1,17 @@
 import { StatusBar } from "expo-status-bar";
-import { View, StyleSheet } from "react-native";
+import { View } from "react-native";
 
-import Main from "./src/components/Main";
+import { appStyles as styles } from "./src/styles.js";
+
+import DrawerNavigator from "./src/navigation/DrawerNavigator";
 
 function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
-      <Main />
+      <DrawerNavigator />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#333333",
-    paddingTop: 35,
-  },
-});
 
 export default App;

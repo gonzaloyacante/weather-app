@@ -29,7 +29,7 @@ const FourteenDaysScreen = () => {
 
   const { forecastData, isLoading, error } = useFetchWeatherForecast(
     location,
-    3
+    14
   );
 
   const formatDate = (dateString) => {

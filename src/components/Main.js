@@ -1,17 +1,19 @@
 import { View } from "react-native";
 
-import Navigation from "../navigation/Navigation.js";
+import TopTabNavigator from "../navigation/TopTabNavigator.js";
 import { NavigationContainer } from "@react-navigation/native";
 
-import { mainStyles as styles } from "../styles.js";
+// import { mainStyles as styles } from "../styles.js";
 
 const Main = () => {
   return (
-    <NavigationContainer>
-      <View style={styles.container}>
-        <Navigation />
-      </View>
-    </NavigationContainer>
+    <View>
+      <NavigationContainer>
+        <TopTabNavigator />
+      </NavigationContainer>
+      <View>Search</View>
+      <View>Favorite</View>
+    </View>
   );
 };
 

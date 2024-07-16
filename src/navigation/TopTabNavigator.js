@@ -6,7 +6,7 @@ import FourteenDaysScreen from "../screens/FourteenDaysScreen";
 
 const Tab = createMaterialTopTabNavigator();
 
-const Navigation = () => {
+const TopTabNavigator = () => {
   return (
     <Tab.Navigator
       initialRouteName="TodayScreen"
@@ -24,11 +24,11 @@ const Navigation = () => {
           backgroundColor: "#ffffff",
         },
       }}>
-      <Tab.Screen name="Today" component={TodayScreen} />
-      <Tab.Screen name="Tomorrow" component={TomorrowScreen} />
-      <Tab.Screen name="14 Days" component={FourteenDaysScreen} />
+      <Tab.Screen name="Hoy" component={TodayScreen} />
+      <Tab.Screen name="Mañana" component={TomorrowScreen} />
+      <Tab.Screen name="14 Días" component={FourteenDaysScreen} />
     </Tab.Navigator>
   );
 };
 
-export default Navigation;
+export default TopTabNavigator;

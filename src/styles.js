@@ -1,13 +1,5 @@
 import { StyleSheet } from "react-native";
 
-export const mainStyles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#333333",
-    paddingTop: 35,
-  },
-});
-
 // const commonStyles = {
 //   container: {
 //     flex: 1,
@@ -21,6 +13,14 @@ export const mainStyles = StyleSheet.create({
 //     marginBottom: 5,
 //   },
 // };
+
+export const appStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#333333",
+    paddingTop: 40,
+  },
+});
 
 export const todayScreenStyles = StyleSheet.create({
   container: {
