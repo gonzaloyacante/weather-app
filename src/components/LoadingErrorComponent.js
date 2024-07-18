@@ -6,7 +6,7 @@ const LoadingErrorComponent = ({ isLoading, error, children }) => {
     return (
       <View style={styles.container}>
         <ActivityIndicator size="large" />
-        <Text style={styles.text}>Cargando datos...</Text>
+        <Text style={styles.loading}>Cargando datos...</Text>
       </View>
     );
   }
@@ -14,7 +14,7 @@ const LoadingErrorComponent = ({ isLoading, error, children }) => {
   if (error) {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Error: {error}</Text>
+        <Text style={styles.error}>Error: {error}</Text>
       </View>
     );
   }
@@ -28,7 +28,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  text: {
+  loading: {
+    fontSize: 18,
+    color: "white",
+  },
+  error: {
     fontSize: 18,
     color: "#ff0000",
   },
